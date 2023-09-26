@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = require('./src/routes/api');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 require('dotenv').config({
@@ -47,6 +48,9 @@ mongoose
     .catch((err) => {
         console.error('MongoDB Database Not Connected:', err);
     });
+
+// Routing Implement
+app.use('/api/v1', router);
 
 // Undefined Route Implement
 app.use('*', (req, res) => {

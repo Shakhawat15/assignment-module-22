@@ -92,3 +92,5 @@ router.get('/wish-lists', wishListController.read);
 router.post('/wish-list', wishListController.create);
 router.delete('/wish-list/:id', wishListController.delete);
 router.put('/wish-list/:id', wishListController.update);
+
+module.exports = router;
